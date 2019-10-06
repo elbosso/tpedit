@@ -1,0 +1,10 @@
+<html>
+<body style="width:380px">
+<h1>Kategorie</h1>
+<h2>Name</h2>${helper.escapeHtml4(${category.name})}
+<h2>Beschreibung</h2>
+${helper.escapeHtml4(${category.Description})}
+<h2>Tests in dieser Kategorie:</h2>
+${category.Tests.size()}
+</body>
+</html>

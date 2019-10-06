@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="FunctionalTest" type="FunctionalTestType">
+		<xs:key name="CATEGORYTESTID">
+			<xs:selector xpath="./Category"/>
+			<xs:field xpath="@name"/>
+			<xs:field xpath="Test/@ID"/>
+		</xs:key>
+		<xs:unique name="CATEGORYNAME">
+			<xs:selector xpath="./Category"/>
+			<xs:field xpath="@name"/>
+		</xs:unique>
+		<xs:unique name="TAGNAME">
+			<xs:selector xpath="./TagsDescription"/>
+			<xs:field xpath="TagDescription/TagName"/>
+		</xs:unique>
+		<!--xs:keyref name="TESTCOMBINATION_FK" refer="CATEGORYTESTID">
+			<xs:selector xpath="./Category/TestCombination/ReferencedTests/ReferencedTest"/>
+			<xs:field xpath="./@CategoryName"/>
+			<xs:field xpath="./@TestID"/>
+		</xs:keyref-->
+	</xs:element>
+	<xs:complexType name="FunctionalTestType">
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="0" name="TagsDescription" type="TagsDescriptionsType"/>
+			<xs:element maxOccurs="1" minOccurs="0" name="QaTeamMembers" type="QaTeamMembersType"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="Category" type="CategoryType"/>
+		</xs:sequence>
+		<xs:attribute name="application" type="xs:string" use="required"/>
+		<xs:attribute name="date" type="xs:date" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="CategoryType">
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="0" name="Description" type="xs:string"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="Test" type="TestType"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="TestCombination" type="TestCombinationType"/>
+		</xs:sequence>
+		<xs:attribute name="ID" type="xs:int" use="required"/>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="new" type="xs:boolean" use="optional" default="false"/>
+		<xs:attribute name="edited" type="xs:boolean" use="optional" default="false"/>
+	</xs:complexType>
+	<xs:complexType name="TestType">
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="1" name="Description" type="xs:string"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="Actions" type="ActionsType"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="ExpectedResults" type="ExpectedResultsType"/>
+			<xs:element maxOccurs="1" minOccurs="0" name="Variants" type="VariantsType"/>
+			<xs:element maxOccurs="1" minOccurs="0" name="Tags" type="TagsType"/>
+		</xs:sequence>
+		<xs:attribute name="ID" type="xs:int" use="required"/>
+		<xs:attribute name="Variants" type="xs:string" use="optional" default=""/>
+		<xs:attribute name="FromVersionMajor" type="xs:int" use="required"/>
+		<xs:attribute name="FromVersionMinor" type="xs:int" use="required"/>
+		<xs:attribute name="new" type="xs:boolean" use="optional" default="false"/>
+		<xs:attribute name="edited" type="xs:boolean" use="optional" default="false"/>
+		<xs:attribute name="RequirementID" type="xs:string" use="optional"/>
+		<xs:attribute name="Tags" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="TestCombinationType">
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="1" name="Description" type="xs:string"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="ReferencedTests" type="ReferencedTestsType"/>
+		</xs:sequence>
+		<xs:attribute name="ID" type="xs:int" use="required"/>
+		<xs:attribute name="AllLanguages" type="xs:boolean" use="optional" default="false"/>
+		<xs:attribute name="FromVersionMajor" type="xs:int" use="required"/>
+		<xs:attribute name="FromVersionMinor" type="xs:int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ActionsType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="1" name="Action" type="ActionType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ActionType">
+		<xs:simpleContent>
+		  <xs:extension base="xs:string">
+			<xs:attribute name="fromMacro" type="xs:boolean" use="optional" default="false">
+			</xs:attribute>
+		  </xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ExpectedResultsType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="1" name="ExpectedResult" type="ExpectedResultType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExpectedResultType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="fromMacro" type="xs:boolean" use="optional" default="false">
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="VariantsType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="1" name="Variant" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TagsType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="1" name="Tag" type="TagType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QaTeamMembersType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="QaTeamMember" type="QaTeamMemberType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QaTeamMemberType">
+		<xs:sequence>
+			<xs:element name="Signature" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TagsDescriptionsType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="TagDescription" type="TagDescriptionType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TagDescriptionType">
+		<xs:sequence>
+			<xs:element name="TagName" type="xs:string"/>
+			<xs:element name="Color" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TagType">
+		<xs:simpleContent>
+		  <xs:extension base="xs:string">
+			<xs:attribute name="hidden" type="xs:boolean" default="false">
+			</xs:attribute>
+		  </xs:extension>
+		</xs:simpleContent>	</xs:complexType>
+	<xs:complexType name="ReferencedTestsType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="1" name="ReferencedTest" type="ReferencedTestType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ReferencedTestType">
+		<xs:attribute name="CategoryName" type="xs:string" use="required"/>
+		<xs:attribute name="TestID" type="xs:int" use="required"/>
+	</xs:complexType>
+</xs:schema>

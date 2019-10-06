@@ -1,0 +1,60 @@
+#macro ( displayActionMacro $collection $parent)
+    #foreach( $item in ${collection} )
+        #set ($children = $helper.actionReferences(${item.toString()}))
+        #if ($children)
+            #displayActionMacro($children $item)
+        #else
+    	 <li>#if ($parent)<em> #end #if(${item.toString().contains("§")})<span style="color: red;"> #end $helper.escapeHtml4(${item.toString()})#if ($parent)</em> #if(${item.toString().contains("§")})</span> #end #end </li>
+    	#end
+    #end
+#end
+#macro ( displayResultMacro $collection $parent)
+    #foreach( $item in ${collection} )
+        #set ($children = $helper.resultReferences(${item.toString()}))
+        #if ($children)
+            #displayResultMacro($children $item)
+        #else
+    	 <li>#if ($parent)<em> #end #if(${item.toString().contains("§")})<span style="color: red;"> #end $helper.escapeHtml4(${item.toString()})#if ($parent)</em> #if(${item.toString().contains("§")})</span> #end #end </li>
+    	#end
+    #end
+#end
+<html>
+<body style="width:380px">
+<h1>Test</h1>
+<h2>ID</h2>
+${test.iD}
+<h2>Requirement ID</h2>
+$helper.escapeHtml4(${test.RequirementId})
+<h2>Description</h2>
+$helper.escapeHtml4(${test.Description})
+<h2>From Version</h2>
+${test.fromVersionMajor}.${test.fromVersionMinor}
+<h2>Actions</h2>
+<ol>
+#displayActionMacro (${test.Actions})
+</ol>
+<h2>Expected Results</h2>
+<ol>
+#displayResultMacro( ${test.expectedResults} )
+</ol>
+#if($test.Variants)
+#if(!( $test.Variants.isEmpty() ))
+<h2>Variants</h2>
+<ul>
+#foreach( $variant in ${test.Variants} )
+	 <li>$helper.escapeHtml4(${variant})</li>
+#end
+</ul>
+#end
+#end
+#if($test.Tags)
+<h2>Tags</h2>
+<ul>
+#foreach( $tag in ${test.Tags.split(",")} )
+	 <li>$helper.escapeHtml4(${tag})</li>
+#end
+</ul>
+#end
+</body>
+</html>
+
