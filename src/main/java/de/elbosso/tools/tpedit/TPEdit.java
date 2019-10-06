@@ -2049,7 +2049,7 @@ javax.swing.event.TreeSelectionListener
 
 	public static void main(java.lang.String[] args) throws Exception
 	{
-		de.elbosso.util.Utilities.configureBasicStdoutLogging(Level.ALL);
+//		de.elbosso.util.Utilities.configureBasicStdoutLogging(Level.ALL);
 		try
 		{
 			java.util.Properties iconFallbacks = new java.util.Properties();
