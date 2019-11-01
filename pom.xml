@@ -46,6 +46,8 @@ WENN SIE AUF DIE MOEGLICHKEIT EINES SOLCHEN SCHADENS HINGEWIESEN WORDEN SIND.
         <project.build.outputEncoding>${project.custom.encoding}</project.build.outputEncoding>
         <project.reporting.outputEncoding>${project.custom.encoding}</project.reporting.outputEncoding>
         <project.main.class>de.elbosso.tools.tpedit.TPEdit</project.main.class>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
     </properties>
   <build>
         <pluginManagement>
@@ -54,8 +56,8 @@ WENN SIE AUF DIE MOEGLICHKEIT EINES SOLCHEN SCHADENS HINGEWIESEN WORDEN SIND.
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
-                        <source>11</source>
-                        <target>11</target>
+                        <!--source>11</source-->
+                        <!--target>11</target-->
                         <compilerVersion>11</compilerVersion>
                     </configuration>
                 </plugin>
