@@ -25,7 +25,9 @@ or to create PDF focuments containing all test cases.
 
 The app is also able to create interactive PDF documents that can be filled out on screen 
 and printed afterwards. But it is also still possible  to create plain PDFs
-that have to be printed out and filled out manually. 
+that have to be printed out and filled out manually.
+
+For more information visit my webpage starting [here](file:///home/elbosso/work/elbosso.github.io/tpedit_erstellt_interaktive_formulare.html#content). 
 
 ## Build
 
