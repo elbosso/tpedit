@@ -1,6 +1,6 @@
 package de.elbosso.tools.tpedit;
 
-import de.elbosso.util.Utilities;
+import de.elbosso.ui.Utilities;
 
 //$Id$
 class SaxExporter extends java.lang.Object implements org.xml.sax.XMLReader
