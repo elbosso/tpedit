@@ -1,6 +1,13 @@
 Changelog of this project.
 
 
+            **refactoring**
+
+
+            [643d80c08134858](https://github.com/<user>/<project>>/commit/643d80c08134858) Jürgen Key *2020-12-23 11:58:16*
+
+
+
             **automated maven release management**
 
 
