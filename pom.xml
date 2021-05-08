@@ -206,6 +206,12 @@ ${project.main.class}
         </dependency>
         <dependency>
             <groupId>de.elbosso</groupId>
+            <artifactId>model_i18n</artifactId>
+            <version>1.2.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.elbosso</groupId>
             <artifactId>util_annotations</artifactId>
             <version>1.2.0</version>
             <scope>compile</scope>
