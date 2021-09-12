@@ -1,6 +1,11 @@
 Changelog of this project.
 
 
+            **missing resource added**
+
+
+            [99a2dd86b247cb5](https://github.com/<user>/<project>>/commit/99a2dd86b247cb5) Jürgen Key *2021-05-08 14:22:11*
+
             **repository locations fixed**
 
 
