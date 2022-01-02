@@ -1,6 +1,11 @@
 Changelog of this project.
 
 
+            **change of repository location for de.elbosso artifacts**
+
+
+            [3281be346ae98c2](https://github.com/<user>/<project>>/commit/3281be346ae98c2) Jürgen Key *2021-09-12 08:43:49*
+
             **missing resource added**
 
 
