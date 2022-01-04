@@ -1,6 +1,13 @@
 Changelog of this project.
 
 
+            **fixes #1**
+
+
+            [98de052039a6e08](https://github.com/<user>/<project>>/commit/98de052039a6e08) Juergen Key *2022-01-02 14:44:01*
+
+
+
             **change of repository location for de.elbosso artifacts**
 
 

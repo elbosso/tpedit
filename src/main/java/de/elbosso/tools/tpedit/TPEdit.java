@@ -4,6 +4,7 @@ package de.elbosso.tools.tpedit;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfReaderContentParser;
 import de.netsysit.ui.dialog.GeneralPurposeInfoDialog;
+import de.netsysit.util.ResourceLoader;
 import org.apache.log4j.Level;
 
 import javax.swing.*;
@@ -12,6 +13,7 @@ import javax.swing.tree.TreeNode;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.io.IOException;
 import java.util.Collections;
 
 
