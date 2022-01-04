@@ -1,12 +1,24 @@
 Changelog of this project.
 
 
+            **dependency management**
+
+
+            [e5945c538e017c9](https://github.com/<user>/<project>>/commit/e5945c538e017c9) Juergen Key *2022-01-04 07:46:37*
+
+
+
             **fixes #1**
 
 
             [98de052039a6e08](https://github.com/<user>/<project>>/commit/98de052039a6e08) Juergen Key *2022-01-02 14:44:01*
 
 
+
+            **dependency management**
+
+
+            [c268aa345c10c51](https://github.com/<user>/<project>>/commit/c268aa345c10c51) Juergen Key *2022-01-04 07:45:23*
 
             **dependency management**
 
