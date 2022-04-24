@@ -3,7 +3,8 @@ package de.elbosso.tools.tpedit;
 public class Test extends de.elbosso.model.tree.CloneableMutableTreeNode implements
 java.awt.datatransfer.Transferable
 {
-	private final static org.apache.log4j.Logger CLASS_LOGGER = org.apache.log4j.Logger.getLogger(Test.class);
+	private final static org.slf4j.Logger EXCEPTION_LOGGER = org.slf4j.LoggerFactory.getLogger("de.netsysit.experimental.ExceptionLogger");
+	private final static org.slf4j.Logger CLASS_LOGGER = org.slf4j.LoggerFactory.getLogger(Test.class);
 	private javax.swing.tree.MutableTreeNode parent;
 	private int iD;
 	private int fromVersionMajor;

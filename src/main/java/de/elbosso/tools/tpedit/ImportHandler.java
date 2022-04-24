@@ -8,7 +8,8 @@ import java.util.List;
 
 class ImportHandler extends org.xml.sax.helpers.DefaultHandler
 {
-	private final static org.apache.log4j.Logger CLASS_LOGGER = org.apache.log4j.Logger.getLogger(ImportHandler.class);
+	private final static org.slf4j.Logger EXCEPTION_LOGGER = org.slf4j.LoggerFactory.getLogger("de.netsysit.experimental.ExceptionLogger");
+	private final static org.slf4j.Logger CLASS_LOGGER = org.slf4j.LoggerFactory.getLogger(ImportHandler.class);
 	private java.util.List categories;
 	private java.io.File file;
 	private Category category;

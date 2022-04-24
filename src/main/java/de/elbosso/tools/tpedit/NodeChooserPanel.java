@@ -10,8 +10,8 @@ import java.awt.*;
 public class NodeChooserPanel extends javax.swing.JPanel implements
 		javax.swing.event.TreeSelectionListener
 {
-	private final static org.apache.log4j.Logger EXCEPTION_LOGGER = org.apache.log4j.Logger.getLogger("de.netsysit.experimental.ExceptionLogger");
-	private final static org.apache.log4j.Logger CLASS_LOGGER = org.apache.log4j.Logger.getLogger(NodeChooserPanel.class);
+	private final static org.slf4j.Logger EXCEPTION_LOGGER = org.slf4j.LoggerFactory.getLogger("de.netsysit.experimental.ExceptionLogger");
+	private final static org.slf4j.Logger CLASS_LOGGER = org.slf4j.LoggerFactory.getLogger(NodeChooserPanel.class);
 	private final static java.util.ResourceBundle i18n = java.util.ResourceBundle.getBundle("de.elbosso.tools.i18n", java.util.Locale.getDefault());
 	private javax.swing.JTree tree = new javax.swing.JTree();
 	private javax.swing.JScrollPane treescroller = new javax.swing.JScrollPane(tree);

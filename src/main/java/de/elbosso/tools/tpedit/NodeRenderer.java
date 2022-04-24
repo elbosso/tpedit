@@ -14,7 +14,8 @@ import java.io.IOException;
  */
 class NodeRenderer extends javax.swing.tree.DefaultTreeCellRenderer
 {
-	private final static org.apache.log4j.Logger CLASS_LOGGER = org.apache.log4j.Logger.getLogger(NodeRenderer.class);
+	private final static org.slf4j.Logger EXCEPTION_LOGGER = org.slf4j.LoggerFactory.getLogger("de.netsysit.experimental.ExceptionLogger");
+	private final static org.slf4j.Logger CLASS_LOGGER = org.slf4j.LoggerFactory.getLogger(NodeRenderer.class);
 	private java.net.URL newurl;
 	private java.net.URL updatedurl;
 	private java.awt.image.BufferedImage testimg;

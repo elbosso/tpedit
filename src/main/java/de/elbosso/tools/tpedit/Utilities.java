@@ -4,8 +4,8 @@ import java.io.IOException;
 
 public class Utilities extends  java.lang.Object
 {
-	private final static org.apache.log4j.Logger EXCEPTION_LOGGER = org.apache.log4j.Logger.getLogger("de.netsysit.experimental.ExceptionLogger");
-	private final static org.apache.log4j.Logger CLASS_LOGGER = org.apache.log4j.Logger.getLogger(Utilities.class);
+	private final static org.slf4j.Logger EXCEPTION_LOGGER = org.slf4j.LoggerFactory.getLogger("de.netsysit.experimental.ExceptionLogger");
+	private final static org.slf4j.Logger CLASS_LOGGER = org.slf4j.LoggerFactory.getLogger(Utilities.class);
 	private final static java.util.ResourceBundle i18n = java.util.ResourceBundle.getBundle("de.elbosso.tools.i18n", java.util.Locale.getDefault());
 
 	private Utilities()
@@ -38,7 +38,7 @@ public class Utilities extends  java.lang.Object
 				else if (obj instanceof Test)
 				{
 					Test test = (Test) obj;
-					if (CLASS_LOGGER.isDebugEnabled()) CLASS_LOGGER.debug(test.getActions());
+					if (CLASS_LOGGER.isDebugEnabled()) CLASS_LOGGER.debug(java.util.Objects.toString(test.getActions()));
 					org.apache.velocity.VelocityContext context = new org.apache.velocity.VelocityContext();
 					context.put("test", test);
 					context.put("helper", velocityHelper);

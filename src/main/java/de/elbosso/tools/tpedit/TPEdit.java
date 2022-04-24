@@ -4,8 +4,6 @@ package de.elbosso.tools.tpedit;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfReaderContentParser;
 import de.netsysit.ui.dialog.GeneralPurposeInfoDialog;
-import de.netsysit.util.ResourceLoader;
-import org.apache.log4j.Level;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
@@ -13,7 +11,6 @@ import javax.swing.tree.TreeNode;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
-import java.io.IOException;
 import java.util.Collections;
 
 
@@ -23,8 +20,8 @@ javax.swing.event.TreeSelectionListener
 ,java.awt.dnd.DragSourceListener
 ,java.awt.event.MouseListener
 {
-	private final static org.apache.log4j.Logger EXCEPTION_LOGGER = org.apache.log4j.Logger.getLogger("de.netsysit.experimental.ExceptionLogger");
-	private final static org.apache.log4j.Logger CLASS_LOGGER = org.apache.log4j.Logger.getLogger(TPEdit.class);
+	private final static org.slf4j.Logger EXCEPTION_LOGGER = org.slf4j.LoggerFactory.getLogger("de.netsysit.experimental.ExceptionLogger");
+	private final static org.slf4j.Logger CLASS_LOGGER = org.slf4j.LoggerFactory.getLogger(TPEdit.class);
 	private final static java.util.ResourceBundle i18n = java.util.ResourceBundle.getBundle("de.elbosso.tools.i18n", java.util.Locale.getDefault());
 	private static final java.lang.String[] XMLSUFFIXES = {"xml", "xml.gz"};
 	private static final java.lang.String[] TRANSFORMSUFFIXES = {"pdf", "xml", "diff.pdf", "form"};
